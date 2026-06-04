@@ -16,6 +16,10 @@ def load_model():
     # Load the matching image transforms
     transforms = torch.hub.load("intel-isl/MiDaS", "transforms")
     transform = transforms.dpt_transform  # matches DPT_Large
+# The transform:
+# Resizes the image to what MiDaS expects as MiDas was trained on specific size and pixel photos
+# Converts pixel values from 0-255 to normalized values (roughly -2 to +2)
+# Converts the image from a NumPy array to a PyTorch tensor
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     midas.to(device)
