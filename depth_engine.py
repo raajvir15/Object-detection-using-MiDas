@@ -5,7 +5,7 @@ from PIL import Image
 
 # MiDaS comes pre-packaged in torch.hub so we go not need to download it ourselves
 def load_model():
-    model_type = "DPT_Large"  
+    model_type = "MiDaS_small"  
     # we have option to use DPT_Large, DPT_Hybrid, MiDaS_small
     # baad mei we will compare all three
     
@@ -15,7 +15,7 @@ def load_model():
     
     # Load the matching image transforms
     transforms = torch.hub.load("intel-isl/MiDaS", "transforms")
-    transform = transforms.dpt_transform  # matches DPT_Large
+    transform = transforms.small_transform  # matches DPT_Large
 # The transform:
 # Resizes the image to what MiDaS expects as MiDas was trained on specific size and pixel photos
 # Converts pixel values from 0-255 to normalized values (roughly -2 to +2)
