@@ -10,7 +10,7 @@ A Streamlit web app that estimates depth from a single uploaded photo using Inte
 
 | Original Image | Depth Map with Zones |
 |---|---|
-| ![Original Image](assets/screenshot 1.png) | ![Output Image](assets/screenshot 2.png) |
+| ![Original Image](assets/screenshot1.png) | ![Output Image](assets/screenshot2.png) |
 
 ---
 
