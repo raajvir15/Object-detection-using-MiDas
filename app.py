@@ -4,7 +4,11 @@ from depth_engine import load_model, get_depth_map
 from zone_analyzer import analyze_zones, get_alerts, colorize_depth, alerts_to_speech, draw_zones_on_image
 from audio_engine import text_to_audio_file
 
-st.set_page_config(page_title="Depth Vision", layout="wide")
+st.set_page_config(
+    page_title="Depth Vision",
+    page_icon="./assets/logo.png",
+    layout="wide"
+)
 
 @st.cache_resource
 def get_model():
@@ -13,6 +17,28 @@ def get_model():
 model, transform, device = get_model()
 
 st.title("Depth Vision")
+st.caption("AI-powered obstacle detection for indoor navigation")
+st.divider()
+
+with st.sidebar:
+    st.markdown("### About")
+    st.markdown(
+        "This tool uses Intel's **MiDaS** model to estimate depth "
+        "from a single photo, then analyzes it zone-by-zone to detect "
+        "obstacles in indoor spaces — built as an assistive navigation aid."
+    )
+    st.markdown("---")
+    st.markdown("### How it works")
+    st.markdown(
+        "1. Upload a photo\n"
+        "2. MiDaS estimates depth\n"
+        "3. Image split into 5 zones + floor\n"
+        "4. Alerts generated per zone\n"
+        "5. Spoken summary plays automatically"
+    )
+    st.markdown("---")
+    st.markdown("**Built by Raajvir Mehta**")
+    st.markdown("[GitHub Repo](https://github.com/raajvir15/Object-detection-using-MiDas)")
 
 uploaded = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
