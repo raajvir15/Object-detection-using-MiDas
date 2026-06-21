@@ -10,7 +10,10 @@ A Streamlit web app that estimates depth from a single uploaded photo using Inte
 
 | Original Image | Depth Map with Zones |
 |---|---|
-| ![Original Image](assets/screenshot1.png) | ![Output Image](assets/screenshot2.png) |
+| ![Original Imagea](assets/screenshot1.png) | ![Output Image](assets/screenshot2.png) |
+
+## Running on Streamlit
+Link: https://object-detection-using-midas-raajvir15.streamlit.app
 
 ---
 
@@ -34,7 +37,7 @@ This was built as an assistive-technology exploration following an earlier capst
 ## Project Structure
 
 ```
-depth_vision_project/
+Object-detection-using-MiDas/
 │
 ├── app.py              # Streamlit frontend — UI, file upload, orchestration
 ├── depth_engine.py      # Loads MiDaS, runs inference on an uploaded image
@@ -83,9 +86,6 @@ See [MIDAS_RESEARCH.md](./MIDAS_RESEARCH.md) for a full explanation of MiDaS's a
 
 ---
 
-## Running on Streamli
-Link: https://object-detection-using-midas-raajvir15.streamlit.app
-
 ```bash
 # Clone the repo
 git clone https://github.com/raajvir15/Object-detection-using-MiDas.git
@@ -117,7 +117,12 @@ MiDaS offers a speed/accuracy trade-off across three model sizes:
 | `DPT_Hybrid` | Medium | Medium |
 | `DPT_Large` | Slow | Best |
 
-*(Benchmarking results across these three variants — to be added.)*
+**Note:** This app uses `MiDaS_small` in production due to memory 
+and compute constraints on free-tier Streamlit Cloud hosting 
+(CPU-only, limited RAM). `DPT_Large` (Vision Transformer-based) 
+offers better accuracy but its self-attention mechanism is too 
+memory-heavy for this deployment environment — a practical 
+speed/accuracy tradeoff decision rather than a limitation of MiDaS itself.
 
 ---
 
