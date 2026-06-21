@@ -10,7 +10,7 @@ A Streamlit web app that estimates depth from a single uploaded photo using Inte
 
 | Original Image | Depth Map with Zones |
 |---|---|
-| *![Original Image](assets/screenshot 1.png)* | *![Output Image](assets/screenshot 2.png)* |
+| ![Original Image](assets/screenshot 1.png) | ![Output Image](assets/screenshot 2.png) |
 
 ---
 
@@ -84,7 +84,7 @@ See [MIDAS_RESEARCH.md](./MIDAS_RESEARCH.md) for a full explanation of MiDaS's a
 ---
 
 ## Running on Streamli
-Link: 
+Link: https://object-detection-using-midas-raajvir15.streamlit.app
 
 ```bash
 # Clone the repo
